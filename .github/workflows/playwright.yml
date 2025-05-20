@@ -16,9 +16,9 @@ jobs:
     - name: Install dependencies
       run: npm i
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
     - name: Set environment variable
-      run: export Duration=2000
+      run: export Duration="2000"
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
