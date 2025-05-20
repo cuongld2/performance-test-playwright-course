@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      Duration: 2000
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -17,8 +19,6 @@ jobs:
       run: npm i
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium
-    - name: Set environment variable
-      run: export Duration="2000"
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
